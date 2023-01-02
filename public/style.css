@@ -1,0 +1,46 @@
+body {
+  margin: o;
+  box-sizing: border-box;
+  background-color: rgb(0, 142, 225);
+}
+
+.bg-color1 {
+  background-color: rgb(134, 115, 251);
+}
+.imagesize {
+  width: 13%;
+}
+.btn-navbar {
+  background-color: aqua;
+  color: blueviolet;
+}
+.button1 {
+  background-color: #57b7e5;
+  color: black;
+}
+.button1:hover {
+  background-color: #7c8082;
+  color: white;
+  transition: all ease-in 0.2s;
+}
+.bg-1 {
+  background: #37517e;
+}
+.img-size {
+  width: 150px;
+  height: 150px;
+}
+.error-msg{
+  font-size: 1rem;
+  color: rgb(248, 55, 55);
+}
+.error-msg1{
+  font-size: 1.5rem;
+  color: green;
+}
+.size{
+  width: 50%;
+}
+.size1{
+  width: 30%;
+}
