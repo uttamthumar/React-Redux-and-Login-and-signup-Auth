@@ -1,15 +1,26 @@
 import { React } from "react";
 import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Button from "react-bootstrap/Button";
+import { addtocart, removeItem } from "../redux/actions";
 
 export const Cart = (props) => {
+  const dispatch = useDispatch();
   let result = useSelector((state) => state.cardItems);
-  console.log("result", result);
+  console.log("1@result", result);
 
   let amount =
-    result.length &&
-    result.map((item) => item.Price - 0).reduce((Prev, Next) => Prev + Next);
-  console.log("amount", amount);
+    result.cardItems.length &&
+    result.cardItems
+      .map((item) => item.Price - 0)
+      .reduce((Prev, Next) => Prev + Next);
+  // console.log("amount", amount);
+  // let Qtv =
+  //   result.cardItems.length &&
+  //   result.cardItems
+  //     .map((item) => item.qty)
+  //     .reduce((Prev, Next) => Prev + Next);
+  // // console.log("Qtv", Qtv);
 
   return (
     <div>
@@ -17,15 +28,33 @@ export const Cart = (props) => {
         <tbody>
           <tr>
             <td>Product Name</td>
-            <td></td>
-            <td>Total</td>
+            <td>Quantity</td>
+            <td> Price Total</td>
           </tr>
-          {result.map((item, index) => {
+          {result.cardItems.map((item, index) => {
+            console.log("222222", item);
             return (
               <tr key={index}>
                 <td>{item.Name}</td>
-                <td>{item.Brand}</td>
+                <td>{item.qty}</td>
                 <td>{item.Price}</td>
+                <td>
+                  <Button
+                    className="me-5"
+                    onClick={() => {
+                      dispatch(addtocart(item));
+                    }}
+                  >
+                    Add
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      dispatch(removeItem(item._id));
+                    }}
+                  >
+                    Remove
+                  </Button>{" "}
+                </td>
               </tr>
             );
           })}
