@@ -2,7 +2,7 @@ import { ADD_TO_CART } from "./Constance";
 import { REMOVE_TO_CART } from "./Constance";
 
 export const addtocart = (data) => {
-  console.warn("action", data);
+  console.warn("action add", data);
   return {
     type: ADD_TO_CART,
     data: data,

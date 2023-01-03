@@ -39,8 +39,7 @@ function Home(props) {
             </button>
             <button
               onClick={() => {
-                console.log("okay", item._id);
-                dispatch(removeItem(item._id));
+                dispatch(removeItem(item));
               }}
             >
               remove to cart

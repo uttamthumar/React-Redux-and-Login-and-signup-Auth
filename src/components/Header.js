@@ -4,7 +4,6 @@ import img1 from "../assets/add.svg";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
 export const Header = (props) => {
-    console.log("props Header", props.cardData);
     const history = useNavigate();
 
     function cartHandler(){
